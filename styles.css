@@ -1,0 +1,51 @@
+/* Table of Contents */
+#tableOfContents {
+	overflow-x: hidden; 
+	line-height: 1.5;
+}
+
+/* Numbering and indenting (1. ; 1.1 ; 1.2 ; 2. etc.)  */
+#tableOfContents OL { counter-reset: item }
+#tableOfContents LI { display: block }
+/* Opacity adjustment due to stacking order of the elements */
+#tableOfContents LI:before { content: counters(item, ".") "."; counter-increment: item; opacity: 0.99; background: white;  }
+
+#tableOfContents span {
+	background: white;
+}
+/* Leadings ( 1. Summary . . . . . . . . . . 23 ) */
+#tableOfContents span:after {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "}
+
+#tableOfContents span:first-child {
+    padding-right: 0.33em;
+    background: white;
+}
+
+ #tableOfContents div {
+ 	padding-left: 0.33em;
+ 	float:right;
+ 	background-color: white;
+ 	z-index: 42;
+    opacity: 0.99;
+ }
+
+ #tableOfContents > ol {
+ 	padding-left: 0;
+ }
